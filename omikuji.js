@@ -1,16 +1,20 @@
 function getRandomImage() {
-   const number = Math.floor(Math.random() * 7);
-   const imagePath = "./images/omikuji-" + number.toString() + ".png";
-   return imagePath;
+  const number = Math.floor(Math.random() * 7); // 0〜6
+  return "./images/omikuji-" + number + ".png";
 }
 
 function playOmikuji() {
-    const slotAnimationTimer = setInterval(function () {
-    document.querySelector("#js-result").setAttribute("src", getRandomImage());
+  const resultImg = document.querySelector("#js-result");
+
+  // 100msごとに画像を切り替えてスロット風にする
+  const slotAnimationTimer = setInterval(function () {
+    resultImg.setAttribute("src", getRandomImage());
   }, 100);
 
-  setTimeout(function() {
+  // 3秒後に止めて、そのときの画像を固定する
+  setTimeout(function () {
     clearInterval(slotAnimationTimer);
+    resultImg.setAttribute("src", getRandomImage());
   }, 3000);
 }
 
