@@ -1,66 +1,49 @@
-/* 全体の背景と文字 */
 body {
-  margin: 0;
-  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic UI", sans-serif;
-  background: #fdfcf7 url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  color: #333;
+    font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    margin: 0;
+    padding: 0;
 }
 
-/* コンテナ */
 .omikuji {
-  text-align: center;
-  padding: 40px 20px;
-  max-width: 500px;
-  margin: 50px auto;
-  background: rgba(255, 255, 255, 0.9);
-  border: 6px solid #b22222; /* 深紅っぽい赤 */
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 40px 20px;
+    border: 5px solid #666;
+    border-radius: 16px;
+    background: #fff;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* 見出し */
 .omikuji-headline {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #b22222;
-  letter-spacing: 3px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(178, 34, 34, 0.3);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* 結果画像 */
 .omikuji-result img {
-  margin-bottom: 25px;
-  border-radius: 12px;
-  border: 3px solid #ccc;
-  background: #fff;
-  transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .omikuji-result img:hover {
-  transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-/* ボタン */
 .omikuji-button {
-  padding: 12px 28px;
-  font-size: 1rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #b22222, #ff6347);
-  border: none;
-  border-radius: 30px;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(178, 34, 34, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 12px 28px;
+    font-size: 1rem;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .omikuji-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(178, 34, 34, 0.6);
+    background: #1976d2;
+    transform: scale(1.05);
 }
-
-.omikuji-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 5px rgba(178, 34, 34, 0.5);
 }
