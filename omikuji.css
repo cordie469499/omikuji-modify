@@ -1,48 +1,101 @@
 body {
-    font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", sans-serif;
-    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    background: linear-gradient(135deg, #faf5ef 0%, #e8e3d3 100%);
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* 和紙風のテクスチャ感 */
 .omikuji {
     text-align: center;
-    padding: 40px 20px;
-    border: 5px solid #666;
+    padding: 50px 30px;
+    border: 3px solid #cbb279; /* 金色っぽい縁 */
     border-radius: 16px;
-    background: #fff;
-    max-width: 400px;
-    margin: 60px auto;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    max-width: 420px;
+    margin: 20px;
+    animation: fadeIn 1s ease;
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
+    background-size: 12px 12px; /* 細かい和紙っぽい模様 */
 }
 
 .omikuji-headline {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #cbb279;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .omikuji-result img {
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
+    margin-bottom: 25px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    border-radius: 12px;
+    border: 2px solid #cbb279;
 }
 
 .omikuji-result img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(1deg);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
 }
 
+/* 和風ボタン */
 .omikuji-button {
-    padding: 12px 28px;
-    font-size: 1rem;
-    background: #2196f3;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #b33939, #8e2323); /* 深紅漆塗り */
     color: #fff;
-    border: none;
-    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #cbb279;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 .omikuji-button:hover {
-    background: #1976d2;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #8e2323, #b33939);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+}
+
+/* ボタンに和柄風のアクセント */
+.omikuji-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.08) 8px,
+        transparent 8px,
+        transparent 16px
+    ); /* 麻の葉っぽい光沢ライン */
+    transform: skewX(-20deg);
+    transition: 0.5s;
+}
+
+.omikuji-button:hover::before {
+    left: 0;
+}
+
+/* ふわっと表示 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
