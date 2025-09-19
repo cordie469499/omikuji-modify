@@ -1,6 +1,6 @@
 function getRandomImage() {
   const number = Math.floor(Math.random() * 7); // 0〜6
-  return "omikuji-" + number + ".png"; // 同じ階層にある
+  return "./omikuji-" + number + ".png"; // ./ を明示
 }
 
 function playOmikuji() {
